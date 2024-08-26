@@ -1,0 +1,215 @@
+body {
+    position: relative;
+    background-color: #333; /* Cor de fundo de reserva */
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Cor do texto geral em tema dark */
+    overflow-x: hidden; /* Remove a rolagem horizontal */
+    overflow-y: hidden;
+}
+
+a.nostyle {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+div.portfoliocard {
+    position: relative;
+    width: 90%;
+    max-width: 680px;
+    height: auto;
+    background: rgba(30, 30, 30, 0.8); /* Cor de fundo da card com transparência */
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    box-shadow: 0px -1px 3px rgba(165, 162, 162, 0.5), 0px 2px 6px rgba(184, 177, 177, 0.7);
+    border-radius: 6px;
+    margin: 10% auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+div.portfoliocard div.coverphoto {
+    width: 100%;
+    height: 120px;
+    background: url('title.jpg'); /* Substitua pelo URL da imagem de fundo escura */
+    background-position: center center;
+    background-size: cover;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 3px 20px rgba(0, 0, 0, 0.5), 1px 0px 2px rgba(0, 0, 0, 0.8);
+}
+
+div.portfoliocard div.left_col,
+div.portfoliocard div.right_col {
+    box-sizing: border-box;
+}
+
+div.portfoliocard div.left_col {
+    width: 40%;
+    padding-top: 85px;
+    float: left;
+}
+
+div.portfoliocard div.right_col {
+    width: 60%;
+    background: rgba(50, 50, 50, 0.9); /* Cor de fundo da coluna direita */
+    border-left: 1px solid rgba(60, 60, 60, 0.8);
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5);
+    margin-left: -1px;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+    padding: 10px 15px;
+    float: left;
+}
+
+div.portfoliocard div.profile_picture {
+    width: 110px;
+    height: 110px;
+    background: rgba(50, 50, 50, 1);
+    position: absolute;
+    top: 65px;
+    left: 40px;
+    border-radius: 100%;
+    background-image: url('hi.png'); /* Mantenha sua imagem de perfil ou substitua por uma versão mais escura */
+    background-size: cover;
+    padding: 7px;
+    border: 4px solid rgba(30, 30, 30, 1);
+}
+
+div.portfoliocard div.right_col h2.name {
+    font-size: 30px;
+    font-weight: 300;
+    color: #e0e0e0; /* Cor do texto em tema dark */
+    margin: 10px 0 0 0;
+}
+
+div.portfoliocard div.right_col h3.location {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(170, 170, 170, 1);
+    margin: 5px 0 10px 0;
+}
+
+div.portfoliocard ul.contact_information {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+div.portfoliocard ul.contact_information li {
+    height: 25px;
+    line-height: 25px;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgba(200, 200, 200, 1);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    cursor: default;
+    margin: 0;
+}
+
+div.portfoliocard ul.contact_information li:before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    display: block;
+    float: left;
+    background-position: center;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    opacity: 0.7;
+}
+
+div.portfoliocard ul.contact_information li:hover:before {
+    opacity: 1;
+}
+
+div.portfoliocard div.followers,
+div.portfoliocard div.following {
+    margin: 15px 0 0 0;
+    font-weight: 300;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+div.portfoliocard div.follow_count {
+    font-weight: 400;
+    font-size: 25px;
+    color: rgba(200, 200, 200, 1);
+}
+
+.tech-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.tech-icons i {
+    font-size: 20px;
+    color: #b0b0b0; /* Cor dos ícones */
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tech-icons i:hover {
+    color: #1e90ff; /* Cor dos ícones ao passar o mouse */
+}
+
+/* Media Query para telas pequenas */
+@media (max-width: 600px) {
+    body {
+        overflow-y: visible;
+    }
+
+    div.portfoliocard {
+        width: 100%;
+        height: auto;
+        margin: 10% auto;
+    }
+
+    div.portfoliocard div.left_col,
+    div.portfoliocard div.right_col {
+        float: none;
+        width: 100%;
+        display: block;
+    }
+
+    div.portfoliocard div.right_col {
+        border-left: none;
+        margin-left: 0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    div.portfoliocard div.profile_picture {
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    div.portfoliocard div.right_col h2.name,
+    div.portfoliocard div.right_col h3.location {
+        margin: 10px 0;
+    }
+
+    .tech-icons {
+        margin-top: -35px;
+        padding-bottom: 20px;
+    }
+}
