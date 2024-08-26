@@ -6,33 +6,35 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div class="portfoliocard"> <!-- Adiciona animação fadeIn com atraso -->
+    <div class="portfoliocard">
         <div class="coverphoto"></div>
         <div class="profile_picture"></div>
         <div class="left_col">
-            <div class="tech-icons"> <!-- Animação com atraso -->
-                <i class="fab fa-html5" title="HTML5"></i>
-                <i class="fab fa-css3-alt" title="CSS3"></i>
-                <i class="fab fa-js" title="JavaScript"></i>
-                <i class="fab fa-php" title="PHP"></i>
-                <i class="fab fa-laravel" title="Laravel"></i>
-                <i class="fab fa-react" title="React.js"></i>
-                <i class="fas fa-database" title="MySQL / SQL Server"></i>
-                <i class="fab fa-microsoft" title="Microsoft"></i>
-                <i class="fab fa-linux" title="Linux"></i>
-                <i class="fas fa-file-word" title="Microsoft Word"></i>
-                <i class="fas fa-file-excel" title="Microsoft Excel"></i>
-                <i class="fas fa-laptop" title="Montagem e Manutenção"></i>
-                <i class="fas fa-code" title="Visual Basic Developer"></i>
-                <i class="fas fa-network-wired" title="Infraestrutura"></i>
-                <i class="fas fa-broadcast-tower" title="Consultoria On-line"></i>
+            <div class="tech-icons">
+                <i class="fab fa-html5" title="Mais de 10 anos de experiência na criação de websites usando HTML." onclick="showAlert(this)"></i>
+                <i class="fab fa-css3-alt" title="Mais de 10 anos de experiência em criação e estilização de websites utilizando CSS." onclick="showAlert(this)"></i>
+                <i class="fab fa-js" title="Mais de 10 anos de experiência em desenvolvimento de websites dinâmicos e responsivos com JavaScript e jQuery." onclick="showAlert(this)"></i>
+                <i class="fab fa-php" title="6 anos de experiência em desenvolvimento web com PHP e frameworks." onclick="showAlert(this)"></i>
+                <i class="fab fa-laravel" title="4 anos de experiência em projetos com Laravel, incluindo integração de APIs usando Swagger." onclick="showAlert(this)"></i>
+                <i class="fab fa-react" title="Experiência no desenvolvimento de projetos pessoais com React.js, adquirindo habilidades sólidas." onclick="showAlert(this)"></i>
+                <i class="fas fa-database" title="Mais de 10 anos de experiência com bancos de dados, incluindo MySQL e SQL Server, além de configuração de servidores." onclick="showAlert(this)"></i>
+                <i class="fab fa-microsoft" title="20 anos de experiência com sistemas Windows, desde o Windows 98 até o Windows 11." onclick="showAlert(this)"></i>
+                <i class="fab fa-linux" title="10 anos de experiência com diversas distribuições Linux." onclick="showAlert(this)"></i>
+                <i class="fas fa-file-word" title="20 anos de conhecimento no uso avançado do Microsoft Word." onclick="showAlert(this)"></i>
+                <i class="fas fa-file-excel" title="20 anos de conhecimento no uso avançado do Microsoft Excel." onclick="showAlert(this)"></i>
+                <i class="fas fa-laptop" title="20 anos de experiência em montagem e manutenção de computadores e notebooks." onclick="showAlert(this)"></i>
+                <i class="fas fa-code" title="Experiência inicial em desenvolvimento com Visual Basic 6." onclick="showAlert(this)"></i>
+                <i class="fas fa-network-wired" title="Experiência em estruturação e configuração de redes." onclick="showAlert(this)"></i>
+                <i class="fas fa-broadcast-tower" title="Consultoria especializada em tecnologia e suporte técnico para clientes." onclick="showAlert(this)"></i>
             </div>
         </div>
-        <div class="right_col"> <!-- Animação com atraso -->
+        <div class="right_col">
             <h2 class="name">Nicole Szulc</h2>
             <h3 class="location">São Paulo, BR</h3>
             <ul class="contact_information">
@@ -43,11 +45,17 @@
             </ul>
         </div>
     </div>
-</body>
 
-<script>
-    window.addEventListener('load', function() {
-        document.body.style.backgroundColor = '';
-    });
-</script>
+    <script>
+        function showAlert(element) {
+            new Noty({
+                text: element.getAttribute('title'),
+                type: 'info',
+                layout: 'center',
+                theme: 'metroui',
+                timeout: 3000
+            }).show();
+        }
+    </script>
+</body>
 </html>
