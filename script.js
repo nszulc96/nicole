@@ -103,14 +103,14 @@ $(document).ready(function () {
                     A library management project developed in C#. This system allows users to catalogue, search and track book loans in an intuitive way.
                 </p>
                 <div class="project-images">
-                    <a href="bibliomania/splash-screen.png" target="_blank">
-                        <img src="bibliomania/splash-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
+                    <a href="./bibliomania/splash-screen.png" target="_blank">
+                        <img src="./bibliomania/splash-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
                     </a>
-                    <a href="bibliomania/login-screen.png" target="_blank">
-                        <img src="../bibliomania/login-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
+                    <a href="./bibliomania/login-screen.png" target="_blank">
+                        <img src="./bibliomania/login-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
                     </a>
-                    <a href="bibliomania/rent.png" target="_blank">
-                        <img src="../bibliomania/rent.png" alt="Screen Biblio Mania" class="imgsBiblio">
+                    <a href="./bibliomania/rent.png" target="_blank">
+                        <img src="./bibliomania/rent.png" alt="Screen Biblio Mania" class="imgsBiblio">
                     </a>
                 </div>
             </div>
