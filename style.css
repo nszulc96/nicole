@@ -1,239 +1,99 @@
-:root {
-    --bg: #172554;
-    --pr: #2563eb;
-    --sc: #fbbf24;
-}
-
-html,
 body {
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url(back.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-body {
-    margin: 0;
+.terminal {
+    max-width: 1000px;
+    min-height: 580px;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.terminal-header {
+    border-bottom: 2px solid #596892;
+    background-color: #0e4f8b;
+    border-radius: 8px !important;
+}
+
+.terminal-body {
+    min-height: 580px;
+    overflow-y: auto;
+    font-size: 15px;
+    border-radius: 8px !important;
+}
+
+#terminal-input {
+    outline: none;
+    caret-color: #ffa500 !important;
+    border: 1px solid #E4405F !important;
+}
+
+.window-buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg);
+    gap: 8px;
+    margin-right: 10px;
 }
 
-a {
-    text-decoration: none;
+.window-buttons span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6c6c6c;
+    border: #333;
 }
 
-.wrapper {
-    max-width: 85%;
-    width: 100%;
-    margin: 1rem auto;
+.window-buttons .close {
+    background-color: #ff605c !important;
 }
 
-.header {
-    display: flex;
-    margin-bottom: 1rem;
+.window-buttons .minimize {
+    background-color: #ffbd44 !important;
 }
 
-.header-col {
-    width: 100%;
+.window-buttons .maximize {
+    background-color: #00ca4e !important;
 }
 
-.about-me-container {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Espaçamento entre a imagem e o texto */
+.window-buttons span:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
-.about-me-photo {
-    width: 150px; /* Defina o tamanho da imagem */
-    height: auto;  /* Mantenha a proporção da imagem */
-    border-radius: 50%; /* Torna a imagem circular */
-}
-
-.about-me-text {
-    color: #fde68a; /* Cor do texto */
-    font-size: 14px; /* Tamanho da fonte */
-}
-
-/* header title */
-.header-title {
-    border-top-left-radius: 0.5rem;
-    position: relative;
-    z-index: 1;
-    background-color: var(--pr);
-    color: var(--sc);
-    text-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+.highlight-computers {
+    color: #FF6347;
     font-weight: bold;
-    padding: 0.85rem 1.5rem 0.85rem 1rem;
-    text-shadow: 0px 3px black;
 }
 
-.header-title::after {
-    content: '';
-    width: 0;
-    height: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 0px solid transparent;
-    border-right: 12px solid var(--bg);
-
-    position: absolute;
-    bottom: 0;
-    right: 0;
+.highlight-os {
+    color: #1E90FF;
+    font-weight: bold;
 }
 
-/* header menu */
-.header-menu {
-    border-top-right-radius: 0.5rem;
-    background-color: var(--pr);
-    padding: 0rem 0.5rem;
-    display: flex;
-    gap: 0.75rem;
-}
-
-.header-menu a {
-    padding: 0.25rem;
-    border-bottom: 2px solid transparent;
-    color: var(--bg);
-}
-
-.header-menu a:hover {
-    color: white;
-}
-
-.header-menu a.active {
-    color: var(--sc);
-    border-bottom-color: var(--sc);
-}
-
-/* main */
-.main {
-    display: flex;
-}
-
-/* main content */
-.main-content {
-    flex-grow: 1;
-    min-height: 10rem;
-    position: relative;
-    border: 1px solid var(--pr);
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    padding: 1rem 1rem;
-}
-
-.main-content p {
-    color: #fde68a;
-    font-size: 14px;
-}
-
-.main-content p q {
-    display: block;
-    color: var(--sc);
-}
-
-.main-content::after {
-    content: 'since.1996';
-    color: var(--pr);
-    font-size: 10px;
-    width: 49%;
-    height: 1rem;
-    background-color: var(--bg);
-    border-right: 1px solid var(--pr);
-    border-top: 1px solid var(--pr);
-    position: absolute;
-    bottom: 100%;
-    right: -1px;
-}
-
-.main-content::before {
-    content: '';
-    width: 1px;
-    height: 16px;
-    background-color: var(--pr);
-    transform: rotate(45deg);
-    position: absolute;
-    right: 226px;
-    top: -15px;
-}
-
-.main-pattern {
-    width: 100%;
-    height: 1rem;
-
-    background: repeating-linear-gradient(to bottom right,
-            transparent 0%,
-            transparent 33%,
-            var(--pr) 33%,
-            var(--pr) 66%,
-            transparent 66%,
-            transparent 100%);
-    background-size: 15px 15px;
-    animation: animate 300ms linear infinite;
-}
-@keyframes animate {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: 15px 0;
-    }
-  }
-
-/* main files */
-.main-files {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding-left: 1rem;
-}
-
-.main-files a {
-    color: var(--pr);
-    position: relative;
-}
-
-.main-files a:hover::after {
-    content: '';
-    width: 2rem;
-    height: 1rem;
-    background-color: var(--sc);
-    position: absolute;
-    top: 100%;
-    right: 0;
-}
-
-.main-files a:hover::before {
-    content: '';
-    border-top: 0px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-right: 12px solid var(--sc);
-    position: absolute;
-    top: 100%;
-    right: 24px;
-}
-
-.main-files a:hover {
-    background-color: var(--sc);
-    color: var(--bg);
-}
-
+/* skills */
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas */
-    gap: 20px; /* Espaçamento entre as colunas */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 20px;
 }
 
-/* Para cada lista de habilidades */
 .skills-container ul {
     list-style: none;
     padding: 0;
 }
 
-/* Estilo dos itens de habilidades */
 .skills-container li {
     margin-bottom: 10px;
+    color: #ff605c;
 }
 
 .progressBar {
@@ -243,11 +103,128 @@ a {
 }
 
 .bar {
-    width: 100%; /* Preenche toda a largura */
+    width: 100%;
     height: 100%;
 }
 
-.imgsBiblio {
-    max-width: 420px;
-    max-height: 420px;
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container li {
+        font-size: 16px;
+    }
+
+    .bar {
+        height: 18px;
+    }
 }
+
+.project-images {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-images a {
+    flex: 1 1 30%;
+    max-width: 30%;
+    height: auto;
+    display: block;
+}
+
+.project-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.project {
+    margin-bottom: 30px;
+}
+
+.project h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #11e470;
+}
+
+.project small {
+    font-size: 1rem;
+    color: #e73e14;
+}
+
+.project p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.social-media {
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon:hover img {
+    filter: grayscale(0%);
+}
+
+.social-icon.instagram {
+    background-color: #E4405F;
+}
+
+.social-icon.facebook {
+    background-color: #3B5998;
+}
+
+.social-icon.github {
+    background-color: #333;
+}
+
+.social-icon.linkedin {
+    background-color: #0077B5;
+}
+
+.social-icon.email {
+    background-color: #1cbb4c;
+}
+
+
