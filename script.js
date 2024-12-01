@@ -107,10 +107,10 @@ $(document).ready(function () {
                         <img src="bibliomania/splash-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
                     </a>
                     <a href="bibliomania/login-screen.png" target="_blank">
-                        <img src="bibliomania/login-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
+                        <img src="../bibliomania/login-screen.png" alt="Screen Biblio Mania" class="imgsBiblio">
                     </a>
                     <a href="bibliomania/rent.png" target="_blank">
-                        <img src="bibliomania/rent.png" alt="Screen Biblio Mania" class="imgsBiblio">
+                        <img src="../bibliomania/rent.png" alt="Screen Biblio Mania" class="imgsBiblio">
                     </a>
                 </div>
             </div>
