@@ -121,6 +121,11 @@ body {
     .bar {
         height: 18px;
     }
+
+    #signature {
+        color: #00ca4e;
+        margin-left: -200px;
+    }
 }
 
 .project {
@@ -211,7 +216,7 @@ body {
 
 #signature {
     color: #00ca4e;
-    margin-left: -180px;
+    margin-left: -170px;
 }
 
 .nameSkillDev {
