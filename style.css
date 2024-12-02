@@ -31,9 +31,11 @@ body {
 }
 
 #terminal-input {
-    outline: none;
-    caret-color: #ffa500 !important;
-    border: 1px solid #E4405F !important;
+    outline: none !important;
+    border: none !important;
+    caret-color: #ffa500;
+    background: none !important;
+    color: #fff;
 }
 
 .window-buttons {
@@ -93,7 +95,7 @@ body {
 
 .skills-container li {
     margin-bottom: 10px;
-    color: #ee701d;
+    color: #fefeff;
 }
 
 .progressBar {
@@ -209,5 +211,17 @@ body {
 
 #signature {
     color: #00ca4e;
-    margin-left: -180px;
+    margin-left: -160px;
+}
+
+.nameSkillDev {
+    color:#eaff28;
+}
+
+.skillPC {
+    color:#E4405F;
+}
+
+.skillG {
+    color: #1E90FF;
 }

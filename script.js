@@ -18,66 +18,66 @@ $(document).ready(function () {
         skills: `
             <div class="skills-container">
                 <ul>
-                    <li>HTML + CSS + JavaScript (+ 10 years)
+                    <li><span class="nameSkillDev">HTML + CSS + JavaScript + Bootstrap - React Bootstrap - Materialize (+ 10 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 100%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>PHP + Codeigniter + GIT (+ 7 years)
+                    <li><span class="nameSkillDev">PHP + Codeigniter + GIT (+ 7 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 70%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>Laravel + React.JS + Node.JS (+ 4 years)
+                    <li><span class="nameSkillDev">Laravel (with Blade) + React.JS + Node.JS (+ 4 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 60%;">█ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>SQL Server + MySQL (+ 10 years)
+                    <li><span class="nameSkillDev">SQL Server + MySQL (+ 10 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 100%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
                 </ul>
                 <ul>
-                    <li>Windows (+ 20 years)
+                    <li><span class="skillPC">Windows (+ 20 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 100%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>Linux (+ 10 years)
+                    <li><span class="skillPC">Linux (+ 10 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 90%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>Microsoft Office & LibreOffice (+ 20 years)
+                    <li><span class="skillPC">Microsoft Office & LibreOffice (+ 20 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 100%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>Hardware and Networking Management (+ 15 years)
+                    <li><span class="skillPC">Hardware and Networking Management (+ 15 years)</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 85%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
                 </ul>
                 <ul>
-                    <li>Agile Scrum - Daily
+                    <li><span class="skillG">Agile Scrum - Daily</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 75%;">█ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>LGPD
+                    <li><span class="skillG">LGPD</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 80%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>Project Manager
+                    <li><span class="skillG">Project Manager</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 70%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
                     </li>
-                    <li>E-Commerce + ERP + CRM
+                    <li><span class="skillG">E-Commerce + ERP + CRM</span>
                         <div class="progressBar">
                             <div class="bar" style="width: 90%;">█ █ █ █ █ █ █ █ █ █</div>
                         </div>
@@ -160,7 +160,6 @@ $(document).ready(function () {
                         ░▀░▀░ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀
                 </pre>
                 <p><b>Welcome to my portfolio! Type 'help' to start!</b></p>
-                <p class="typing"><b><span class="text-warning">guest@nickszulc1996</span>:~$ <span id="current-command"></span></b></p>
             `);
         } else if (commands[normalizedCommand]) {
             output.append(`<p>${commands[normalizedCommand]}</p>`);
