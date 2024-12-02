@@ -155,9 +155,9 @@ $(document).ready(function () {
         if (normalizedCommand === 'clear') {
             output.html(`
                 <pre id="signature">
-                        █░░░█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀
-                        █▄█▄█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀
-                        ░▀░▀░ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀
+█░░░█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀
+█▄█▄█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀
+░▀░▀░ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀
                 </pre>
                 <p><b>Welcome to my portfolio! Type 'help' to start!</b></p>
             `);
