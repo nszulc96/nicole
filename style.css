@@ -93,7 +93,7 @@ body {
 
 .skills-container li {
     margin-bottom: 10px;
-    color: #ff605c;
+    color: #ee701d;
 }
 
 .progressBar {
@@ -119,28 +119,6 @@ body {
     .bar {
         height: 18px;
     }
-}
-
-.project-images {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.project-images a {
-    flex: 1 1 30%;
-    max-width: 30%;
-    height: auto;
-    display: block;
-}
-
-.project-images img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    object-fit: cover;
 }
 
 .project {
@@ -173,6 +151,8 @@ body {
 .social-media h3 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color:#adff28;
+    text-decoration: double !important;
 }
 
 .social-icons {
@@ -227,4 +207,7 @@ body {
     background-color: #1cbb4c;
 }
 
-
+#signature {
+    color: #00ca4e;
+    margin-left: -180px;
+}

@@ -19,12 +19,17 @@
                 </div>
                 <div class="text-white">New Terminal</div>
             </div>
-            <div class="terminal-body bg-dark text-light p-3">
+            <div class="terminal-body bg-dark text-light p-3 position-relative">
                 <div id="output" class="mb-3">
-                    <p>Welcome to my portfolio! Type 'help' to start!</p>
-                    <p><span class="text-warning">guest@nickszulc1996</span>:~$ <span id="current-command"></span></p>
+                    <pre id="signature">
+                        █░░░█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀
+                        █▄█▄█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀
+                        ░▀░▀░ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀
+                    </pre>
+                    <p><b>Welcome to my portfolio! Type 'help' to start!</b></p>
+                    <p class="typing"><b><span class="text-warning">guest@nickszulc1996</span>:~$ <span id="current-command"></span></b></p>
                 </div>
-                <input type="text" id="terminal-input" class="form-control bg-dark text-light border-0">
+                <input type="text" id="terminal-input" class="form-control bg-dark text-light border-0 position-relative">
             </div>
         </div>
     </div>

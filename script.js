@@ -87,7 +87,7 @@ $(document).ready(function () {
         `,
         projects: `
             <div class="project">
-                <h3>Expresso Tecnologia <small>09/2018 - 10/2024</small></h3>
+                <h3><b>Expresso Tecnologia <small>09/2018 - 10/2024</small></b></h3>
                 <p>
                     Acted in the development of ERP Mobili, ELO360 and JagOS projects, between 2018 and 2024, giving
                     maintenance, refactoring and creating various features, such as integration with API,
@@ -98,7 +98,7 @@ $(document).ready(function () {
             </div>
 
             <div class="project">
-                <h3>Biblio Mania (C# - 2015)</h3>
+                <h3><b>Biblio Mania (C# - 2015)</b></h3>
                 <p>
                     A library management project developed in C#. This system allows users to catalogue, search and track book loans in an intuitive way.
                 </p>
@@ -106,7 +106,13 @@ $(document).ready(function () {
         `,
         social: `
             <div class="social-media">
-                <h3>Work with me!</h3>
+                <h3>Let's make it together, beign a partnership!</h3>
+                <h5>
+                    Contact me through these communication channels and let's get to know each other!
+                </h5>
+                <center>
+                    <img src="heartpc.gif" alt="gif of a computer" style="max-width: 190px;">
+                </center>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/nickszulc1996" target="_blank" class="social-icon instagram">
                         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v4/icons/instagram.svg" alt="Instagram">
@@ -137,21 +143,31 @@ $(document).ready(function () {
                 <li><b>clear</b> - Clear the terminal</li>
             </ul>
         `,
-        clear: '',
+        clear: ''
     };
 
     function processCommand(command) {
-        output.append(`<p><span class="text-warning">guest@portfolio</span>:~$ <span class="text-success">${command}</span></p>`);
+        $(".typing").remove();
+        output.append(`<p><b><span class="text-warning">guest@nickszulc1996</span>:~$ <span class="text-info">${command}</span></b></p>`);
 
-        if (command === 'clear') {
-            output.html('');
-        } else if (commands[command]) {
-            output.append(`<p>${commands[command]}</p>`);
+        const normalizedCommand = command.toLowerCase();
+
+        if (normalizedCommand === 'clear') {
+            output.html(`
+                <pre id="signature">
+                        █░░░█ █▀▀ █░░ █▀▀ █▀▀█ █▀▄▀█ █▀▀
+                        █▄█▄█ █▀▀ █░░ █░░ █░░█ █░▀░█ █▀▀
+                        ░▀░▀░ ▀▀▀ ▀▀▀ ▀▀▀ ▀▀▀▀ ▀░░░▀ ▀▀▀
+                </pre>
+                <p><b>Welcome to my portfolio! Type 'help' to start!</b></p>
+                <p class="typing"><b><span class="text-warning">guest@nickszulc1996</span>:~$ <span id="current-command"></span></b></p>
+            `);
+        } else if (commands[normalizedCommand]) {
+            output.append(`<p>${commands[normalizedCommand]}</p>`);
         } else {
-            output.append(`<p class="text-danger">Command not found: ${command}</p>`);
+            output.append(`<p class="text-danger"><b>Command not found: ${command}</b></p>`);
         }
 
-        output.append('<p><span class="text-warning">guest@portfolio</span>:~$ <span id="current-command"></span></p>');
         $('#current-command').text('');
         input.focus();
 
@@ -159,6 +175,37 @@ $(document).ready(function () {
             scrollTop: $('#footer').offset().top
         }, 1000);
     }
+
+    function showSuggestions(currentText) {
+        const suggestions = Object.keys(commands)
+        .filter(cmd => cmd.startsWith(currentText.toLowerCase()))
+        .map(cmd => `<span class="suggestion">${cmd}</span>`);
+
+        $('#suggestions').remove();
+
+        if (suggestions.length > 0 && currentText.length > 0) {
+            input.after(`<div id="suggestions" class="bg-dark text-light p-2 rounded">${suggestions.join('<br>')}</div>`);
+            $('.suggestion').on('click', function () {
+                input.val($(this).text());
+                $('#suggestions').remove();
+            });
+        }
+    }
+
+    input.on('input', function () {
+        const currentText = $(this).val();
+        showSuggestions(currentText);
+    });
+
+    input.on('keypress', function (e) {
+        if (e.which === 13) {
+            $('#suggestions').remove();
+        }
+    });
+
+    input.on('blur', function () {
+        setTimeout(() => $('#suggestions').remove(), 100);
+    });
 
     input.on('keypress', function (e) {
         if (e.which === 13) {
