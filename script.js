@@ -175,35 +175,31 @@ $(document).ready(function () {
         }, 1000);
     }
 
-    function showSuggestions(currentText) {
-        const suggestions = Object.keys(commands)
-        .filter(cmd => cmd.startsWith(currentText.toLowerCase()))
-        .map(cmd => `<span class="suggestion">${cmd}</span>`);
+    function getAutocompleteSuggestion(currentText) {
+        if (!currentText) return null;
 
-        $('#suggestions').remove();
+        const suggestions = Object.keys(commands).filter(cmd =>
+            cmd.startsWith(currentText.toLowerCase())
+        );
 
-        if (suggestions.length > 0 && currentText.length > 0) {
-            input.after(`<div id="suggestions" class="bg-dark text-light p-2 rounded">${suggestions.join('<br>')}</div>`);
-            $('.suggestion').on('click', function () {
-                input.val($(this).text());
-                $('#suggestions').remove();
-            });
+        return suggestions.length > 0 ? suggestions[0] : null;
+    }
+
+    function handleAutocomplete() {
+        const currentText = input.val();
+        const suggestion = getAutocompleteSuggestion(currentText);
+
+        if (suggestion && currentText.toLowerCase() !== suggestion) {
+            const completion = suggestion.substring(currentText.length);
+            const autocompletedText = currentText + completion;
+
+            input.val(autocompletedText);
+            input[0].setSelectionRange(currentText.length, autocompletedText.length);
         }
     }
 
     input.on('input', function () {
-        const currentText = $(this).val();
-        showSuggestions(currentText);
-    });
-
-    input.on('keypress', function (e) {
-        if (e.which === 13) {
-            $('#suggestions').remove();
-        }
-    });
-
-    input.on('blur', function () {
-        setTimeout(() => $('#suggestions').remove(), 100);
+        handleAutocomplete();
     });
 
     input.on('keypress', function (e) {
