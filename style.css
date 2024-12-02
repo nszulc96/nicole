@@ -123,6 +123,16 @@ body {
     .bar {
         height: 18px;
     }
+
+    #terminal-input {
+        outline: none !important;
+        border: none !important;
+        caret-color: #ffa500;
+        background: none !important;
+        color: #fff;
+        /* border: 1px solid lime !important; */
+        width: 5% !important;
+    }
 }
 
 .project {
